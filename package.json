@@ -1,0 +1,20 @@
+{
+	"name": "nest-with-next",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"scripts": {
+		"dev": "ts-node apps/server/src/main.ts",
+		"lint": "pnpm exec biome lint --write",
+		"format": "pnpm exec biome format --write"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"packageManager": "pnpm@10.23.0",
+	"devDependencies": {
+		"@biomejs/biome": "^2.3.7",
+		"lefthook": "^2.0.4",
+		"ts-node": "^10.9.2"
+	}
+}
