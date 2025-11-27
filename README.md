@@ -224,16 +224,6 @@ The project includes VS Code settings for optimal development experience:
 
 Open the project in VS Code and you'll be prompted to install recommended extensions.
 
-### Continuous Integration
-
-GitHub Actions CI is configured to run on pull requests:
-
-- **Linting** - Ensures code quality
-- **Build** - Verifies the project builds successfully
-- **Tests** - Runs unit and E2E tests
-
-The CI workflow is located in `.github/workflows/ci.yml`.
-
 ## 🚢 Deployment
 
 ### Build for Production
