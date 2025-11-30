@@ -66,7 +66,7 @@ USER nestjs
 
 # Health check endpoint
 HEALTHCHECK --interval=30s --timeout=3s --start-period=40s --retries=3 \
-	CMD node -e "const port = process.env.PORT || 4000; require('http').get(`http://localhost:${port}/api/health`, (r) => {process.exit(r.statusCode === 200 ? 0 : 1)})"
+	CMD node -e "const http = require('http'); const port = process.env.PORT || 4000; const req = http.get('http://localhost:' + port + '/api/health', {timeout: 2000}, (res) => {process.exit(res.statusCode === 200 ? 0 : 1)}); req.on('error', () => process.exit(1)); req.on('timeout', () => {req.destroy(); process.exit(1)});"
 
 # Start the application
 CMD ["pnpm", "start"]
